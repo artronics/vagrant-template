@@ -20,7 +20,7 @@ mv .config/nvim/vimrc .config/nvim/init.vim
 
 echo "Install vim plugins"
 curl -sfLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#vim +PlugInstall +qall > /dev/null # This doesn't work. have to run in in nvim
+nvim --headless +PlugInstall +qall > /dev/null
 
 echo "Done!"
 END
