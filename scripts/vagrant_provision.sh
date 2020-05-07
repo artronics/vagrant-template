@@ -2,9 +2,13 @@
 
 apt-get update
 apt-get upgrade
-apt-get install -y zsh curl wget git vim neovim python zip make cmake build-essential "linux-headers-$(uname -r)"
+apt-get install -y zsh curl wget git fuse python zip make cmake build-essential "linux-headers-$(uname -r)"
 
 chsh --shell /bin/zsh vagrant
+cd /tmp
+curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+mv nvim.appimage /usr/bin/nvim
+chmod a+x /usr/bin/nvim
 
 cd /home/vagrant
 USER_SCRIPT=$(cat <<'END'
